@@ -30,3 +30,19 @@ class DefiOracleCore {
 }
 
 class DefiOracle {
+  constructor() {
+    this.threshold = parseFloat(process.env.THRESHOLD || '0.75');
+    this.core = new DefiOracleCore(this.threshold);
+  }
+
+  async fetchData() {
+    // Stub: replace with live RPC or API integration
+    return { value: 825_000, velocity: 210, count: 38 };
+  }
+
+  async run() {
+    try {
+      logger.info('Starting DefiOracle processing pipeline');
+      const data = await this.fetchData();
+      const result = this.core.process(data);
+      logger.info({ message: 'Pipeline result', ...result });
