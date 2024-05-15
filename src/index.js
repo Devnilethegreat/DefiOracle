@@ -46,3 +46,22 @@ class DefiOracle {
       const data = await this.fetchData();
       const result = this.core.process(data);
       logger.info({ message: 'Pipeline result', ...result });
+      if (result.flagged) {
+        logger.warn(\ACTION REQUIRED: score \ exceeds threshold \\);
+      } else {
+        logger.info('All metrics within normal parameters.');
+      }
+      return true;
+    } catch (err) {
+      logger.error('Pipeline failed', { error: err.message });
+      return false;
+    }
+  }
+}
+
+if (require.main === module) {
+  const app = new DefiOracle();
+  app.run().then((ok) => process.exit(ok ? 0 : 1));
+}
+
+module.exports = { DefiOracle, DefiOracleCore };
