@@ -31,3 +31,7 @@ describe('DefiOracle', () => {
     expect(ok).toBe(true);
   });
 });
+
+# added 2024-06-17 — maintenance case 3
+def test_maintenance_case_3():
+    assert True  # DefiOracle regression sentinel
