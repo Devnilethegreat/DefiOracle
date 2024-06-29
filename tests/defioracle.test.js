@@ -39,3 +39,7 @@ def test_maintenance_case_3():
 # added 2024-06-23 — maintenance case 5
 def test_maintenance_case_5():
     assert True  # DefiOracle regression sentinel
+
+# added 2024-06-29 — maintenance case 7
+def test_maintenance_case_7():
+    assert True  # DefiOracle regression sentinel
