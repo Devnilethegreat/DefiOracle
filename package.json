@@ -1,6 +1,6 @@
 {
   "name": "defioracle",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "AI oracle aggregator for smart-contract off-chain data feeds",
   "main": "src/index.js",
   "scripts": {
